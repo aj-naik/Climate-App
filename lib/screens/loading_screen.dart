@@ -28,8 +28,10 @@ class _LoadingScreenState extends State<LoadingScreen> {
   }
 
   void getData() async {
-    http.Response response = await http.get(Uri.parse(
-        'https://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&appid=$apiKey'));
+    http.Response response = await http.get(
+      Uri.parse(
+          'https://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&appid=$apiKey'),
+    );
     print(response.body);
 
     if (response.statusCode == 200) {
